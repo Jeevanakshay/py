@@ -1,0 +1,22 @@
+"""Oh! That’s the difference! 
+Create a func,on difference which takes a string S and character K. Find the difference between 
+first occurrence of K and last occurrence of K in string S. Convert the input to lower case before 
+processing. 
+Check for following condi,ons : 
+1. If K not occurred in S, return “K not found in S”. 
+2. If K occurred only once in S, return “Difference can’t be calculated”. 
+3. If K occurs more than once, return count of difference."""
+
+def difference(s,k):
+    s=s.lower()
+    k=k.lower()
+    if s.count(k)==0:
+        return "return “K not found in S"
+    elif s.count(k)==1:
+        return "Difference can’t be calculated"
+    """ finding the letter given as k where its starts and ends letter in given character"""
+    else:
+        return s.rindex(k)-s.index(k)-1
+s=input("enter the s:")
+k=input("enter the k")
+print( difference(s,k))
