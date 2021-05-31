@@ -1,0 +1,32 @@
+class ATM:
+    def __init__(self,card_no,acc_balance):
+        self.card_no=card_no
+        self.acc_balance=acc_balance
+        
+    def print_atm_details(self):
+        print("ATM details")
+        print(self.card_no)
+        print(self.acc_balance)
+        
+    def print_withdraw(self,amount):
+        if amount<=self.acc_balance:
+            self.acc_balance-=amount        
+            amount=self.acc_balance-amount
+            return "Amount withdraw"
+        else:
+            return "OOPS! Unable to withdraw amount"
+    def print_deposit(self,deposited):
+        self.acc_balance+=deposited
+        if deposited>0:
+            return"Amount deposited"
+        else:
+            return"“Invalid amount to deposit"
+    
+    def print_getbalance(self):
+        return self.acc_balance
+    
+obj1=ATM("1233",200)
+obj1.print_atm_details()
+print(obj1.print_withdraw(100))
+print(obj1.print_deposit(500))
+print(obj1.print_getbalance())
