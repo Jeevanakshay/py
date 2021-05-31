@@ -1,0 +1,8 @@
+class Printer:
+    def __init__(self,name):
+        self.name=name
+    def print_me(self):
+        print(self.name)
+        
+obj=Printer("WELCOME")
+print(obj.print_me())
