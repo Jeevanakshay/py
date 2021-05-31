@@ -1,0 +1,36 @@
+     
+class Book:
+    def __init__(self,name_of_book,author,year_of_publish,price_of_book,no_of_copies_available):
+        self.name_of_book=name_of_book
+        self.author=author
+        self.year_of_publish=year_of_publish
+        self.price_of_book=price_of_book
+        self.no_of_copies_available=no_of_copies_available
+    def print_book_details(self):
+        print("the books details")
+        print(self.name_of_book)
+        print(self.author)
+        print(self.year_of_publish)
+        print(self.price_of_book)
+        print(self.no_of_copies_available)
+    
+    def print_order_book(self,no_of_books):
+        no_of_books=no_of_books*self.price_of_book
+        self.no_of_copies_available-=no_of_books
+        if self.no_of_copies_available<=no_of_books:
+            return no_of_books
+        else:
+            return "no stocks"
+    
+    def print_add_quantity(self,is_admin, quantity):
+        books=+self.no_of_copies_available
+        quantity=+books
+        if is_admin==True:
+            return "Book quantity updated as {}".format(self.no_of_copies_available+quantity)
+        else:
+            return"Unauthorized"
+        
+obj1=Book("Software Quality Assurance", "Mr.Jochen", 1994, 100, 50) 
+obj1.print_book_details()
+print(obj1.print_order_book(10))
+print(obj1.print_add_quantity(True,2))
